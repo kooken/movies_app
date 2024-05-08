@@ -1,0 +1,21 @@
+{% extends 'movies/base.html' %}
+{% block content %}
+<div class="col-12 mb-5">
+    <a class="btn btn-outline-primary">Добавить продукт</a>
+</div>
+<div class="row">
+    {% for object in object_list %}
+    <div class="col-3">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">{{ object.movie_name }}</h4>
+            </div>
+            <div class="card-body">
+                <h2 class="card-title pricing-card-title">{{ object.movie_description|slice:5 }} ... </h2>
+                <h1 class="card-title pricing-card-title">{{ object.movie_rating }} stars</h1>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
